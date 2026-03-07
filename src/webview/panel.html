@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!--
+  WordOrb VS Code Extension — Webview Panel Template
+
+  This file is a reference template. The actual HTML is generated dynamically
+  by src/webview-content.ts to inject word/lesson/quiz data.
+
+  The panel supports three views:
+    1. Word Card   — definition, IPA, etymology, translations
+    2. Lesson View — 5-phase tabbed lesson (hook, story, wonder, action, wisdom)
+    3. Quiz View   — interactive multiple-choice quiz with scoring
+
+  All styles use VS Code CSS custom properties for theme compatibility.
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Security-Policy"
+          content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline';" />
+    <style>
+        :root {
+            --bg: var(--vscode-editor-background);
+            --fg: var(--vscode-editor-foreground);
+            --accent: var(--vscode-textLink-foreground, #2563eb);
+            --muted: var(--vscode-descriptionForeground, #888);
+            --border: var(--vscode-panel-border, #333);
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: var(--vscode-font-family);
+            font-size: var(--vscode-font-size, 13px);
+            color: var(--fg);
+            background: var(--bg);
+            padding: 1.5rem;
+            line-height: 1.65;
+        }
+
+        h1 { font-size: 1.6rem; margin-bottom: 0.5rem; }
+
+        .placeholder {
+            text-align: center;
+            padding: 3rem;
+            color: var(--muted);
+        }
+    </style>
+</head>
+<body>
+    <div class="placeholder">
+        <h1>WordOrb</h1>
+        <p>Use a command to load word data into this panel:</p>
+        <ul style="list-style: none; padding: 0; margin-top: 1rem;">
+            <li><code>Ctrl+Shift+W</code> &mdash; Look up selected text</li>
+            <li><code>Ctrl+Shift+P</code> &rarr; <em>WordOrb: Look Up Word</em></li>
+            <li><code>Ctrl+Shift+P</code> &rarr; <em>WordOrb: Daily Word</em></li>
+            <li><code>Ctrl+Shift+P</code> &rarr; <em>WordOrb: Take a Quiz</em></li>
+        </ul>
+    </div>
+</body>
+</html>

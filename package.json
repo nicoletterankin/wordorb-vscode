@@ -1,0 +1,122 @@
+{
+  "name": "wordorb-vocabulary",
+  "displayName": "WordOrb Vocabulary",
+  "description": "Look up any English word instantly -- definitions, IPA, etymology, translations in 47 languages. Hover, select, or command to explore 162K words from the WordOrb API.",
+  "version": "1.0.0",
+  "publisher": "lessonoftheday",
+  "license": "MIT",
+  "icon": "assets/icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lessonoftheday/wordorb-vscode"
+  },
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Education",
+    "Other"
+  ],
+  "keywords": [
+    "vocabulary",
+    "dictionary",
+    "definitions",
+    "etymology",
+    "language"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "wordorb.lookupWord",
+        "title": "WordOrb: Look Up Word",
+        "icon": "$(book)"
+      },
+      {
+        "command": "wordorb.lookupSelection",
+        "title": "WordOrb: Look Up Selected Text",
+        "icon": "$(search)"
+      },
+      {
+        "command": "wordorb.dailyWord",
+        "title": "WordOrb: Daily Word",
+        "icon": "$(calendar)"
+      },
+      {
+        "command": "wordorb.quiz",
+        "title": "WordOrb: Take a Quiz",
+        "icon": "$(question)"
+      }
+    ],
+    "configuration": {
+      "title": "WordOrb",
+      "properties": {
+        "wordorb.apiKey": {
+          "type": "string",
+          "default": "",
+          "description": "Your WordOrb API key (starts with wo_). Get one at wordorb.ai",
+          "order": 1
+        },
+        "wordorb.defaultTone": {
+          "type": "string",
+          "default": "neutral",
+          "enum": [
+            "neutral",
+            "formal",
+            "playful",
+            "poetic",
+            "academic"
+          ],
+          "description": "Default tone for word lookups.",
+          "order": 2
+        },
+        "wordorb.enableHover": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show word definitions on hover.",
+          "order": 3
+        },
+        "wordorb.showStatusBar": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show daily word in the status bar.",
+          "order": 4
+        }
+      }
+    },
+    "keybindings": [
+      {
+        "command": "wordorb.lookupSelection",
+        "key": "ctrl+shift+w",
+        "mac": "cmd+shift+w",
+        "when": "editorHasSelection"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "wordorb.lookupSelection",
+          "when": "editorHasSelection",
+          "group": "wordorb"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "lint": "eslint src --ext ts",
+    "package": "vsce package",
+    "publish": "vsce publish"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/vscode": "^1.80.0",
+    "@vscode/vsce": "^3.0.0",
+    "typescript": "^5.3.0"
+  }
+}

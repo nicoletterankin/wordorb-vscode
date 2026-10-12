@@ -1,6 +1,6 @@
-# WordOrb Vocabulary -- VS Code Extension
+# Word Orb Vocabulary -- VS Code Extension
 
-Look up any English word instantly from your editor. Definitions, IPA pronunciation, etymology, and translations in 47 languages -- powered by the WordOrb API.
+Look up any English word instantly from your editor. Definitions, IPA pronunciation, etymology, and translations in 47 languages -- powered by the Word Orb API.
 
 ## Features
 
@@ -29,7 +29,7 @@ Look up any English word instantly from your editor. Definitions, IPA pronunciat
 
 | Setting | Default | Description |
 |---------|---------|-------------|
-| `wordorb.apiKey` | `""` | Your WordOrb API key |
+| `wordorb.apiKey` | `""` | Your Word Orb API key |
 | `wordorb.defaultTone` | `"neutral"` | Default tone for lookups |
 | `wordorb.enableHover` | `true` | Show definitions on hover |
 | `wordorb.showStatusBar` | `true` | Show daily word in status bar |
